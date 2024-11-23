@@ -31,7 +31,7 @@
                 <fieldset>
                     <div class="pure-control-group">
                         {{ render_field(form.requests.form.time_between_check, class="time-check-widget") }}
-                        <span class="pure-form-message-inline">Default recheck time for all watches, current system minimum is <i>{{min_system_recheck_seconds}}</i> seconds (<a href="https://github.com/dgtlmoon/changedetection.io/wiki/Misc-system-settings#enviroment-variables">more info</a>).</span>
+                        <span class="pure-form-message-inline">Default recheck time for all watches, current system minimum is <i>{{min_system_recheck_seconds}}</i> seconds (<a href="https://github.com/tribixbite/changedetection.io/wiki/Misc-system-settings#enviroment-variables">more info</a>).</span>
                     </div>
                     <div class="pure-control-group">
                         {{ render_field(form.requests.form.jitter_seconds, class="jitter_seconds") }}
@@ -50,7 +50,7 @@
                                 {{ render_button(form.application.form.removepassword_button) }}
                             {% else %}
                             {{ render_field(form.application.form.password) }}
-                            <span class="pure-form-message-inline">Password protection for your changedetection.io application.</span>
+                            <span class="pure-form-message-inline">Password protection for your scry application.</span>
                             {% endif %}
                         {% else %}
                             <span class="pure-form-message-inline">Password is locked.</span>
@@ -103,7 +103,7 @@
                     {{ render_field(form.application.form.base_url, class="m-d") }}
                     <span class="pure-form-message-inline">
                         Base URL used for the <code>{{ '{{ base_url }}' }}</code> token in notification links.<br>
-                        Default value is the system environment variable '<code>BASE_URL</code>' - <a href="https://github.com/dgtlmoon/changedetection.io/wiki/Configurable-BASE_URL-setting">read more here</a>.
+                        Default value is the system environment variable '<code>BASE_URL</code>' - <a href="https://github.com/tribixbite/changedetection.io/wiki/Configurable-BASE_URL-setting">read more here</a>.
                     </span>
                 </div>
             </div>
@@ -130,12 +130,12 @@
                     {{ render_field(form.requests.form.default_ua) }}
                     <span class="pure-form-message-inline">
                         Applied to all requests.<br><br>
-                        Note: Simply changing the User-Agent often does not defeat anti-robot technologies, it's important to consider <a href="https://changedetection.io/tutorial/what-are-main-types-anti-robot-mechanisms">all of the ways that the browser is detected</a>.
+                        Note: Simply changing the User-Agent often does not defeat anti-robot technologies, it's important to consider <a href="https://scry.shinyspells.com/tutorial/what-are-main-types-anti-robot-mechanisms">all of the ways that the browser is detected</a>.
                     </span>
                 </div>
                 <div class="pure-control-group">
                                         <br>
-                    Tip: <a href="https://github.com/dgtlmoon/changedetection.io/wiki/Proxy-configuration#brightdata-proxy-support">Connect using Bright Data and Oxylabs Proxies, find out more here.</a>
+                    Tip: <a href="https://github.com/tribixbite/changedetection.io/wiki/Proxy-configuration#brightdata-proxy-support">Connect using Bright Data and Oxylabs Proxies, find out more here.</a>
 
                 </div>
             </div>
@@ -188,7 +188,7 @@ nav
 
             <div class="tab-pane-inner" id="api">
                 <h4>API Access</h4>
-                <p>Drive your changedetection.io via API, More about <a href="https://github.com/dgtlmoon/changedetection.io/wiki/API-Reference">API access here</a></p>
+                <p>Drive your scry via API, More about <a href="https://github.com/tribixbite/changedetection.io/wiki/API-Reference">API access here</a></p>
 
                 <div class="pure-control-group">
                     {{ render_checkbox_field(form.application.form.api_access_token_enabled) }}
@@ -202,7 +202,7 @@ nav
                 </div>
                 <div class="pure-control-group">
                     <h4>Chrome Extension</h4>
-                    <p>Easily add any web-page to your changedetection.io installation from within Chrome.</p>
+                    <p>Easily add any web-page to your scry installation from within Chrome.</p>
                     <strong>Step 1</strong> Install the extension, <strong>Step 2</strong> Navigate to this page,
                     <strong>Step 3</strong> Open the extension from the toolbar and click "<i>Sync API Access</i>"
                     <p>
@@ -271,7 +271,7 @@ nav
                 <div class="pure-control-group" id="extra-browsers-setting">
                     <p>
                     <span class="pure-form-message-inline"><i>Extra Browsers</i> can be attached to further defeat CAPTCHA's on websites that are particularly hard to scrape.</span><br>
-                    <span class="pure-form-message-inline">Simply paste the connection address into the box, <a href="https://changedetection.io/tutorial/using-bright-datas-scraping-browser-pass-captchas-and-other-protection-when-monitoring">More instructions and examples here</a> </span>
+                    <span class="pure-form-message-inline">Simply paste the connection address into the box, <a href="https://scry.shinyspells.com/tutorial/using-bright-datas-scraping-browser-pass-captchas-and-other-protection-when-monitoring">More instructions and examples here</a> </span>
                     </p>
                     {{ render_field(form.requests.form.extra_browsers) }}
                 </div>

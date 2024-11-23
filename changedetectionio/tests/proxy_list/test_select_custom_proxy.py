@@ -29,7 +29,7 @@ def test_select_custom(client, live_server, measure_memory_usage):
         url_for("import_page"),
         # Because a URL wont show in squid/proxy logs due it being SSLed
         # Use plain HTTP or a specific domain-name here
-        data={"urls": "https://changedetection.io/CHANGELOG.txt"},
+        data={"urls": "https://scry.shinyspells.com/CHANGELOG.txt"},
         follow_redirects=True
     )
 

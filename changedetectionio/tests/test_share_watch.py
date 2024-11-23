@@ -46,7 +46,7 @@ def test_share_watch(client, live_server, measure_memory_usage):
     )
 
     assert b"Share this link:" in res.data
-    assert b"https://changedetection.io/share/" in res.data
+    assert b"https://scry.shinyspells.com/share/" in res.data
 
     html = res.data.decode()
     share_link_search = re.search('<span id="share-link">(.*)</span>', html, re.IGNORECASE)

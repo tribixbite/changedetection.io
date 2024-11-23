@@ -21,7 +21,7 @@ def manage_user_agent(headers, current_ua=''):
     - Scraping of ServiceWorker, new window calls etc
 
     See https://filipvitas.medium.com/how-to-set-user-agent-header-with-puppeteer-js-and-not-fail-28c7a02165da
-    Puppeteer requests https://github.com/dgtlmoon/pyppeteerstealth
+    Puppeteer requests https://github.com/tribixbite/pyppeteerstealth
 
     :param page:
     :param headers:

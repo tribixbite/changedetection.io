@@ -127,7 +127,7 @@ def test_trigger_functionality(client, live_server, measure_memory_usage):
     res = client.get(url_for("index"))
     assert b'unviewed' in res.data
     
-    # https://github.com/dgtlmoon/changedetection.io/issues/616
+    # https://github.com/tribixbite/changedetection.io/issues/616
     # Apparently the actual snapshot that contains the trigger never shows
     res = client.get(url_for("diff_history_page", uuid="first"))
     assert b'Add to cart' in res.data

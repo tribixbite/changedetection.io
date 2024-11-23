@@ -1,4 +1,4 @@
-// Copyright (C) 2021 Leigh Morresi (dgtlmoon@gmail.com)
+// Copyright (C) 2021 Leigh Morresi (tribixbite@gmail.com)
 // All rights reserved.
 
 // @file Scrape the page looking for elements of concern (%ELEMENTS%)

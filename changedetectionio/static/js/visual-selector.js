@@ -1,4 +1,4 @@
-// Copyright (C) 2021 Leigh Morresi (dgtlmoon@gmail.com)
+// Copyright (C) 2021 Leigh Morresi (tribixbite@gmail.com)
 // All rights reserved.
 // yes - this is really a hack, if you are a front-ender and want to help, please get in touch!
 

@@ -26,7 +26,7 @@ RUN \
     libxslt \
     python3 \
     py3-pip && \
-  echo "**** pip3 install test of changedetection.io ****" && \
+  echo "**** pip3 install test of shinyspells.com ****" && \
   pip3 install -U pip wheel setuptools && \
   pip3 install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.18/ -r /requirements.txt && \
   apk del --purge \

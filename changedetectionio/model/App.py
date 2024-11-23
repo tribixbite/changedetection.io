@@ -11,7 +11,7 @@ DEFAULT_SETTINGS_HEADERS_USERAGENT='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/
 
 class model(dict):
     base_config = {
-            'note': "Hello! If you change this file manually, please be sure to restart your changedetection.io instance!",
+            'note': "Hello! If you change this file manually, please be sure to restart your shinyspells.com instance!",
             'watching': {},
             'settings': {
                 'headers': {

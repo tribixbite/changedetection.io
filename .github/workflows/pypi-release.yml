@@ -47,7 +47,7 @@ jobs:
         set -ex
         sudo pip3 install --upgrade pip 
         pip3 install dist/changedetection.io*.whl
-        changedetection.io -d /tmp -p 10000 &
+        shinyspells.com -d /tmp -p 10000 &
         sleep 3
         curl --retry-connrefused --retry 6 http://127.0.0.1:10000/static/styles/pure-min.css >/dev/null
         curl --retry-connrefused --retry 6 http://127.0.0.1:10000/ >/dev/null

@@ -28,10 +28,10 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Build changedetection.io container for testing under Python ${{ env.PYTHON_VERSION }}
+      - name: Build shinyspells.com container for testing under Python ${{ env.PYTHON_VERSION }}
         run: |
           echo "---- Building for Python ${{ env.PYTHON_VERSION }} -----"
-          # Build a changedetection.io container and start testing inside
+          # Build a shinyspells.com container and start testing inside
           docker build --build-arg PYTHON_VERSION=${{ env.PYTHON_VERSION }} --build-arg LOGGER_LEVEL=TRACE -t test-changedetectionio .
           # Debug info
           docker run test-changedetectionio  bash -c 'pip list'         
@@ -49,8 +49,8 @@ jobs:
           docker run --network changedet-network -d --hostname selenium  -p 4444:4444 --rm --shm-size="2g"  selenium/standalone-chrome:4
           
           # SocketPuppetBrowser + Extra for custom browser test
-          docker run --network changedet-network -d -e "LOG_LEVEL=TRACE" --cap-add=SYS_ADMIN --name sockpuppetbrowser --hostname sockpuppetbrowser --rm -p 3000:3000 dgtlmoon/sockpuppetbrowser:latest                    
-          docker run --network changedet-network -d -e "LOG_LEVEL=TRACE" --cap-add=SYS_ADMIN --name sockpuppetbrowser-custom-url --hostname sockpuppetbrowser-custom-url  -p 3001:3000 --rm dgtlmoon/sockpuppetbrowser:latest
+          docker run --network changedet-network -d -e "LOG_LEVEL=TRACE" --cap-add=SYS_ADMIN --name sockpuppetbrowser --hostname sockpuppetbrowser --rm -p 3000:3000 tribixbite/sockpuppetbrowser:latest                    
+          docker run --network changedet-network -d -e "LOG_LEVEL=TRACE" --cap-add=SYS_ADMIN --name sockpuppetbrowser-custom-url --hostname sockpuppetbrowser-custom-url  -p 3001:3000 --rm tribixbite/sockpuppetbrowser:latest
 
       - name: Spin up ancillary SMTP+Echo message test server
         run: |
@@ -159,7 +159,7 @@ jobs:
           ./run_custom_browser_url_tests.sh
           cd ..
 
-      - name: Test changedetection.io container starts+runs basically without error
+      - name: Test shinyspells.com container starts+runs basically without error
         run: |
           docker run --name test-changedetectionio -p 5556:5000  -d test-changedetectionio
           sleep 3
@@ -177,7 +177,7 @@ jobs:
 
           docker kill test-changedetectionio
 
-      - name: Test changedetection.io SIGTERM and SIGINT signal shutdown
+      - name: Test shinyspells.com SIGTERM and SIGINT signal shutdown
         run: |
           
           echo SIGINT Shutdown request test

@@ -100,7 +100,7 @@ class ChangeDetectionStore:
                                tag='Tech news',
                                extras={'fetch_backend': 'html_requests'})
 
-                self.add_watch(url='https://changedetection.io/CHANGELOG.txt',
+                self.add_watch(url='https://scry.shinyspells.com/CHANGELOG.txt',
                                tag='changedetection.io',
                                extras={'fetch_backend': 'html_requests'})
 
@@ -280,7 +280,7 @@ class ChangeDetectionStore:
         apply_extras['tags'] = [] if not apply_extras.get('tags') else apply_extras.get('tags')
 
         # Was it a share link? try to fetch the data
-        if (url.startswith("https://changedetection.io/share/")):
+        if (url.startswith("https://scry.shinyspells.com/share/")):
             try:
                 r = requests.request(method="GET",
                                      url=url,
@@ -735,7 +735,7 @@ class ChangeDetectionStore:
 
     # We incorrectly stored last_changed when there was not a change, and then confused the output list table
     def update_3(self):
-        # see https://github.com/dgtlmoon/changedetection.io/pull/835
+        # see https://github.com/tribixbite/changedetection.io/pull/835
         return
 
     # `last_changed` not needed, we pull that information from the history.txt index

@@ -295,7 +295,7 @@ def extract_json_as_string(content, json_filter, ensure_is_ldjson_info_type=None
     from bs4 import BeautifulSoup
 
     stripped_text_from_html = False
-# https://github.com/dgtlmoon/changedetection.io/pull/2041#issuecomment-1848397161w
+# https://github.com/tribixbite/changedetection.io/pull/2041#issuecomment-1848397161w
     # Try to parse/filter out the JSON, if we get some parser error, then maybe it's embedded within HTML tags
     try:
         stripped_text_from_html = _parse_json(json.loads(content), json_filter)

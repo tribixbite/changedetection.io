@@ -67,7 +67,7 @@ def test_check_access_control(app, client, live_server):
         #        assert b"BACKUP" not in res.data
         #        assert b"IMPORT" not in res.data
 
-        # defaultuser@changedetection.io is actually hardcoded for now, we only use a single password
+        # defaultuser@shinyspells.com is actually hardcoded for now, we only use a single password
         res = c.post(
             url_for("login"),
             data={"password": "foobar"},

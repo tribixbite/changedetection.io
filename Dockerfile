@@ -31,13 +31,13 @@ RUN pip install --extra-index-url https://www.piwheels.org/simple  --target=/dep
 
 # Playwright is an alternative to Selenium
 # Excluded this package from requirements.txt to prevent arm/v6 and arm/v7 builds from failing
-# https://github.com/dgtlmoon/changedetection.io/pull/1067 also musl/alpine (not supported)
+# https://github.com/tribixbite/changedetection.io/pull/1067 also musl/alpine (not supported)
 RUN pip install --target=/dependencies playwright~=1.48.0 \
     || echo "WARN: Failed to install Playwright. The application can still run, but the Playwright option will be disabled."
 
 # Final image stage
 FROM python:${PYTHON_VERSION}-slim-bookworm
-LABEL org.opencontainers.image.source="https://github.com/dgtlmoon/changedetection.io"
+LABEL org.opencontainers.image.source="https://github.com/tribixbite/changedetection.io"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libxslt1.1 \

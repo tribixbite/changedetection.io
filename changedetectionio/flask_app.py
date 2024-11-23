@@ -174,7 +174,7 @@ class User(flask_login.UserMixin):
 
     def set_password(self, password):
         return True
-    def get_user(self, email="defaultuser@changedetection.io"):
+    def get_user(self, email="defaultuser@shinyspells.com"):
         return self
     def is_authenticated(self):
         return True
@@ -307,7 +307,7 @@ def changedetection_app(config=None, datastore_o=None):
             return output
 
         user = User()
-        user.id = "defaultuser@changedetection.io"
+        user.id = "defaultuser@shinyspells.com"
 
         password = request.form.get('password')
 
@@ -374,7 +374,7 @@ def changedetection_app(config=None, datastore_o=None):
         fg = FeedGenerator()
         fg.title('changedetection.io')
         fg.description('Feed description')
-        fg.link(href='https://changedetection.io')
+        fg.link(href='https://scry.shinyspells.com')
 
         for watch in sorted_watches:
 
@@ -385,7 +385,7 @@ def changedetection_app(config=None, datastore_o=None):
 
             if not watch.viewed:
                 # Re #239 - GUID needs to be individual for each event
-                # @todo In the future make this a configurable link back (see work on BASE_URL https://github.com/dgtlmoon/changedetection.io/pull/228)
+                # @todo In the future make this a configurable link back (see work on BASE_URL https://github.com/tribixbite/changedetection.io/pull/228)
                 guid = "{}/{}".format(watch['uuid'], watch.last_changed)
                 fe = fg.add_entry()
 
@@ -588,7 +588,7 @@ def changedetection_app(config=None, datastore_o=None):
         try:
             # use the same as when it is triggered, but then override it with the form test values
             n_object = {
-                'watch_url': request.form.get('window_url', "https://changedetection.io"),
+                'watch_url': request.form.get('window_url', "https://scry.shinyspells.com"),
                 'notification_urls': notification_urls
             }
 
@@ -1584,18 +1584,18 @@ def changedetection_app(config=None, datastore_o=None):
         try:
             r = requests.request(method="POST",
                                  data={'watch': watch_json},
-                                 url="https://changedetection.io/share/share",
+                                 url="https://scry.shinyspells.com/share/share",
                                  headers={'App-Guid': datastore.data['app_guid']})
             res = r.json()
 
-            session['share-link'] = "https://changedetection.io/share/{}".format(res['share_key'])
+            session['share-link'] = "https://scry.shinyspells.com/share/{}".format(res['share_key'])
 
 
         except Exception as e:
             logger.error(f"Error sharing -{str(e)}")
             flash("Could not share, something went wrong while communicating with the share server - {}".format(str(e)), 'error')
 
-        # https://changedetection.io/share/VrMv05wpXyQa
+        # https://scry.shinyspells.com/share/VrMv05wpXyQa
         # in the browser - should give you a nice info page - wtf
         # paste in etc
         return redirect(url_for('index'))
@@ -1657,7 +1657,7 @@ def check_for_new_version():
 
     while not app.config.exit.is_set():
         try:
-            r = requests.post("https://changedetection.io/check-ver.php",
+            r = requests.post("https://scry.shinyspells.com/check-ver.php",
                               data={'version': __version__,
                                     'app_guid': datastore.data['app_guid'],
                                     'watch_count': len(datastore.data['watching'])

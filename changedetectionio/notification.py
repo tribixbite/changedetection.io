@@ -100,11 +100,11 @@ def process_notification(n_object, datastore):
                     and not url.startswith('get') \
                     and not url.startswith('delete') \
                     and not url.startswith('put'):
-                url += k + 'avatar_url=https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/changedetectionio/static/images/avatar-256x256.png'
+                url += k + 'avatar_url=https://raw.githubusercontent.com/tribixbite/changedetection.io/master/changedetectionio/static/images/avatar-256x256.png'
 
             if url.startswith('tgram://'):
                 # Telegram only supports a limit subset of HTML, remove the '<br>' we place in.
-                # re https://github.com/dgtlmoon/changedetection.io/issues/555
+                # re https://github.com/tribixbite/changedetection.io/issues/555
                 # @todo re-use an existing library we have already imported to strip all non-allowed tags
                 n_body = n_body.replace('<br>', '\n')
                 n_body = n_body.replace('</br>', '\n')
