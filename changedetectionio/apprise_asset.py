@@ -7,5 +7,5 @@ asset = apprise.AppriseAsset(
 )
 
 asset.app_id = "scry.shinyspells.com"
-asset.app_desc = "ChangeDetection.io best and simplest website monitoring and change detection"
+asset.app_desc = "Scry - website monitoring and change detection spells"
 asset.app_url = "https://scry.shinyspells.com"
